@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Your Hotel | Wanderlamst</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body class="booking-page">
+    <!-- Custom Cursor elements -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <a href="index.html" class="logo" style="cursor: none;">Wander<span>lamst</span></a>
+    </nav>
+
+    <!-- Parallax Background Elements -->
+    <div class="background-parallax">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Booking Content -->
+    <div class="booking-wrapper">
+        <div class="booking-header">
+            <h1 class="split-text">Reserve Your Suite</h1>
+            <p class="fade-subtitle">Enter your details to request a customized luxury stay from our concierge experts.</p>
+        </div>
+
+        <div class="booking-grid">
+            <!-- Left Side: Interactive Form -->
+            <div class="booking-form-container tilt-panel stagger-panel">
+                <form id="premium-booking-form">
+                    <!-- Step 1: Destination -->
+                    <div class="form-section active" id="step-1">
+                        <h3>1. Where to?</h3>
+                        <div class="input-group">
+                            <select class="premium-select hotel-select" required>
+                                <option value="" disabled selected>Choose a luxury hotel</option>
+                                <option value="hotel_horizon">Grand Horizon Hotel - Downtown</option>
+                                <option value="hotel_royal">The Royal Suites - Uptown</option>
+                                <option value="hotel_azure">Azure Infinity Resort - Coastal</option>
+                                <option value="hotel_mountain">Snowpeak Luxury Lodge - High Altitude</option>
+                                <option value="hotel_forest">Verdant Canopy Retreat - Rainforest</option>
+                                <option value="hotel_desert">Mirage Oasis Resort - Desert Dunes</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                        </div>
+
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-primary next-btn">Continue <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Dates & Guests -->
+                    <div class="form-section hidden" id="step-2">
+                        <h3>2. When & Who?</h3>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <input type="date" class="premium-input" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="date" class="premium-input" required>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin-top: 25px;">
+                            <input type="number" class="premium-input" min="1" max="20" placeholder="Number of Guests" required>
+                        </div>
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-outline prev-btn"><i data-lucide="arrow-left"></i> Back</button>
+                            <button type="button" class="btn btn-primary next-btn">Continue <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Contact Details -->
+                    <div class="form-section hidden" id="step-3">
+                        <h3>3. Your Details</h3>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <input type="text" class="premium-input" placeholder="Full Name" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" class="premium-input" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin-top: 25px;">
+                            <textarea class="premium-input" rows="4" placeholder="Special Requests (Optional)"></textarea>
+                        </div>
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-outline prev-btn"><i data-lucide="arrow-left"></i> Back</button>
+                            <button type="submit" class="btn btn-primary final-submit-btn">Complete Request</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right Side: Imagery/Preview -->
+            <div class="booking-preview stagger-panel">
+                <div class="preview-card">
+                    <img src="assets/images/hotel_exterior.png" alt="Hotel Preview" class="preview-img" id="dynamic-preview">
+                    <div class="preview-overlay">
+                        <h4>Your Perfect Stay Awaits</h4>
+                        <p>Complete the form to let our concierges reserve your premium suite.</p>
+                        <ul class="preview-features">
+                            <li><i data-lucide="check"></i> Fully Customizable</li>
+                            <li><i data-lucide="check"></i> Price Match Guarantee</li>
+                            <li><i data-lucide="check"></i> VIP Airport Transfers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal Hidden -->
+    <div class="success-overlay">
+        <div class="success-modal">
+            <div class="success-icon"><i data-lucide="party-popper"></i></div>
+            <h2>Request Received!</h2>
+            <p>Your journey is being mapped out. Our concierge team will contact you within 24 hours.</p>
+            <a href="index.html" class="btn btn-primary">Return Home</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="hotel_booking.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
